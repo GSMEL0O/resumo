@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz sobre Candidíase</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        .question {
+            margin-bottom: 15px;
+            text-align: left; /* Alinha perguntas à esquerda */
+        }
+        .options {
+            margin-left: 20px;
+            margin-bottom: 10px; /* Espaçamento entre as opções */
+        }
+        .submit {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .result {
+            display: none;
+            margin-top: 20px;
+            text-align: left; /* Alinha resultados à esquerda */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Quiz sobre Candidíase</h1>
+    <form id="quizForm">
+        <div class="question">
+            <p>1. O que é a candidíase?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="a"> Uma infecção causada por vírus.</label><br>
+                <label><input type="radio" name="q1" value="b"> Uma infecção causada por fungos.</label><br>
+                <label><input type="radio" name="q1" value="c"> Uma infecção bacteriana.</label><br>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>2. Quais são os sintomas da candidíase vaginal?</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="a"> Coceira intensa e corrimento espesso.</label><br>
+                <label><input type="radio" name="q2" value="b"> Erupções cutâneas e febre.</label><br>
+                <label><input type="radio" name="q2" value="c"> Dor de cabeça e náuseas.</label><br>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>3. Qual dos seguintes fatores pode aumentar o risco de candidíase?</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="a"> Uso de antibióticos.</label><br>
+                <label><input type="radio" name="q3" value="b"> Exercício físico regular.</label><br>
+                <label><input type="radio" name="q3" value="c"> Hidratação adequada.</label><br>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>4. Como a candidíase oral é comumente conhecida?</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="a"> Sapinho.</label><br>
+                <label><input type="radio" name="q4" value="b"> Laringite.</label><br>
+                <label><input type="radio" name="q4" value="c"> Faringite.</label><br>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>5. Qual é um tratamento comum para candidíase?</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="a"> Antibióticos.</label><br>
+                <label><input type="radio" name="q5" value="b"> Antifúngicos.</label><br>
+                <label><input type="radio" name="q5" value="c"> Analgésicos.</label><br>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>6. Candidíase é mais comum em pessoas com:</p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="a"> Sistema imunológico forte.</label><br>
+                <label><input type="radio" name="q6" value="b"> Sistema imunológico comprometido.</label><br>
+                <label><input type="radio" name="q6" value="c"> Hábitos saudáveis.</label><br>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>7. Qual é um sintoma da candidíase oral?</p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="a"> Manchas brancas na boca.</label><br>
+                <label><input type="radio" name="q7" value="b"> Tosse seca.</label><br>
+                <label><input type="radio" name="q7" value="c"> Febre alta.</label><br>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>8. Um fator de risco para candidíase vaginal é:</p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="a"> Uso de roupas largas.</label><br>
+                <label><input type="radio" name="q8" value="b"> Uso de contraceptivos orais.</label><br>
+                <label><input type="radio" name="q8" value="c"> Aumento da ingestão de água.</label><br>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>9. Qual é uma maneira de prevenir a candidíase?</p>
+            <div class="options">
+                <label><input type="radio" name="q9" value="a"> Consumir mais açúcar.</label><br>
+                <label><input type="radio" name="q9" value="b"> Manter a área genital limpa e seca.</label><br>
+                <label><input type="radio" name="q9" value="c"> Usar roupas sintéticas apertadas.</label><br>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>10. Qual destes não é um sintoma da candidíase vaginal?</p>
+            <div class="options">
+                <label><input type="radio" name="q10" value="a"> Corrimento espesso e branco.</label><br>
+                <label><input type="radio" name="q10" value="b"> Dores de cabeça.</label><br>
+                <label><input type="radio" name="q10" value="c"> Coceira intensa.</label><br>
+            </div>
+        </div>
+
+        <button type="button" class="submit" onclick="checkAnswers()">Enviar Respostas</button>
+    </form>
+
+    <div class="result" id="result"></div>
+
+    <script>
+        function checkAnswers() {
+            const answers = {
+                q1: { correct: 'b', text: 'Uma infecção causada por fungos.' },
+                q2: { correct: 'a', text: 'Coceira intensa e corrimento espesso.' },
+                q3: { correct: 'a', text: 'Uso de antibióticos.' },
+                q4: { correct: 'a', text: 'Sapinho.' },
+                q5: { correct: 'b', text: 'Antifúngicos.' },
+                q6: { correct: 'b', text: 'Sistema imunológico comprometido.' },
+                q7: { correct: 'a', text: 'Manchas brancas na boca.' },
+                q8: { correct: 'b', text: 'Uso de contraceptivos orais.' },
+                q9: { correct: 'b', text: 'Manter a área genital limpa e seca.' },
+                q10: { correct: 'b', text: 'Dores de cabeça.' }
+            };
+
+            let score = 0;
+            let incorrectQuestions = [];
+            let incorrectAnswers = [];
+
+            for (let q in answers) {
+                const userAnswer = document.querySelector(`input[name="${q}"]:checked`);
+                if (userAnswer && userAnswer.value === answers[q].correct) {
+                    score++;
+                } else {
+                    incorrectQuestions.push(q);
+                    incorrectAnswers.push(userAnswer ? userAnswer.value : 'Nenhuma resposta');
+                }
+            }
+
+            const resultDiv = document.getElementById('result');
+            resultDiv.style.display = 'block';
+            let incorrectDetails = incorrectQuestions.map((q, index) => 
+                `Pergunta ${parseInt(q.substring(1))}: Sua resposta: ${incorrectAnswers[index]}, Resposta correta: ${answers[q].text}`).join('<br>');
+            
+            resultDiv.innerHTML = `Você acertou ${score} de ${Object.keys(answers).length} perguntas!<br> 
+                                   Você errou ${incorrectQuestions.length} perguntas.<br> 
+                                   Detalhes das perguntas que você errou:<br>${incorrectDetails || 'Nenhuma'}.`;
+        }
+    </script>
+
+</body>
+</html>
